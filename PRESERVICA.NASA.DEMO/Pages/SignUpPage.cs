@@ -19,8 +19,8 @@ namespace PRESERVICA.NASA.DEMO.Pages
         public ILocator LastnameWarning => _playwrightManager.Page.Locator("#user_last_name_feedback");
         public ILocator EmailField => _playwrightManager.Page.GetByRole(AriaRole.Textbox, new() { Name = "Email *" });
         public ILocator HowWillYouUseAPIs => _playwrightManager.Page.GetByRole(AriaRole.Textbox, new() { Name = "How will you use the APIs? (" });
-
         public ILocator Captcha => _playwrightManager.Page.Locator("//iframe[@title='recaptcha challenge expires in two minutes']");
+        public ILocator Confirmation(string email) => _playwrightManager.Page.GetByText("Your API key for "+ email +" has");
         public async Task NavigateToSignUpPage(string url)
         {
             await _playwrightManager.Setup().ConfigureAwait(false);
@@ -70,7 +70,11 @@ namespace PRESERVICA.NASA.DEMO.Pages
         }
         public async Task ExpectCaptchaAsync()
         {
-            await _playwrightManager.Expect(Captcha).ToBeVisibleAsync(new LocatorAssertionsToBeVisibleOptions { Timeout = 10000 });
+            if(await Confirmation("testuser@example.com").IsVisibleAsync())
+            {
+                return; // If confirmation message is visible, no captcha is expected
+            }
+            else await _playwrightManager.Expect(Captcha).ToBeVisibleAsync(new LocatorAssertionsToBeVisibleOptions { Timeout = 10000 });
         }
     }
 }

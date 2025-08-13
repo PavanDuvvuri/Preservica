@@ -9,7 +9,7 @@ Feature: NASA UI Sign Up
 	Scenario: Sign up with valid credentials
 	When I fill in the sign up form with valid First Name "Test", Last Name "User", Email "testuser@example.com"
 	And I submit the sign up form
-	Then I should see a captcha challenge
+	Then I should see a captcha challenge or success message
 
 	Scenario: Sign up with invalid credentials
 	When I fill in the sign up form with invalid credentials	

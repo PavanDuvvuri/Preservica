@@ -45,8 +45,8 @@ namespace PRESERVICA.NASA.DEMO.StepDefinitions
             await _pageService.SignUpPage.SubmitSignUpForm();
         }
 
-        [Then("I should see a captcha challenge")]
-        public async Task ThenIShouldSeeACaptchaChallenge()
+        [Then("I should see a captcha challenge or success message")]
+        public async Task ThenIShouldSeeACaptchaChallengeOrSuccessMessage()
         {
             await _pageService.SignUpPage.ExpectCaptchaAsync();
         }

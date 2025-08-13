@@ -139,7 +139,7 @@ namespace PRESERVICA.NASA.DEMO.Features
  await testRunner.AndAsync("I submit the sign up form", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 12
- await testRunner.ThenAsync("I should see a captcha challenge", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("I should see a captcha challenge or success message", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+	<!-- NUnit adapter -->
+	<NUnit>
+		<NumberOfTestWorkers>1</NumberOfTestWorkers>
+	</NUnit>
+	
+	<RunConfiguration>
+		<EnvironmentVariables>
+			<EnvironmentName>test</EnvironmentName>
+		</EnvironmentVariables>
+	</RunConfiguration>
+
+	<!-- |Playwright-->
+	<Playwright>
+		<!-- Optional: Browser to use for tests -->
+		<Browser>chromium</Browser>
+		<!-- Optional: Headless mode -->
+		<Headless>true</Headless>
+		<!-- Optional: Enable video recording -->
+		<Video>true</Video>
+		<LaunchOptions>
+			<Channel>chromium</Channel>
+			<!--<Headless>false</Headless>-->
+			<SlowMo>200</SlowMo>
+		</LaunchOptions>
+	</Playwright>
+</RunSettings>

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "PRESERVICA.NASA.DEMO": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
